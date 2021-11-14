@@ -48,6 +48,7 @@
                 <div class="float-end">
                     <button type="submit" class="btn btn-primary btnList">LIST</button>
                     <button type="button" class="btn btn-warning btnMod">MODIFY</button>
+                    <button type="button" class="btn btn-danger btnDel">Delete</button>
                 </div>
             </div>
         </form>
@@ -101,6 +102,16 @@
         e.stopPropagation()
 
         actionForm.submit();
+    },false)
+
+    document.querySelector(".btnDel").addEventListener("click", (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+
+        form.setAttribute("action","/board/remove")
+        form.setAttribute("method","post")
+        form.submit()
+
     },false)
 
     document.querySelector(".btnMod").addEventListener("click", (e) => {

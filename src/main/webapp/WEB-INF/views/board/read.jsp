@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <h1>BOARD READ</h1>
 
-    <form action="/board/remove" method="post" class="deleteForm">
+
         <div class="card-body">
             <div class="input-group mb-3">
                 <span class="input-group-text">BNO</span>
@@ -36,7 +36,6 @@
                 <div class="float-end">
                     <button type="submit" class="btn btn-primary btnList">LIST</button>
                     <button type="button" class="btn btn-warning btnMod">MODIFY</button>
-                    <button type="submit" class="btn btn-danger btnDel">DELETE</button>
                 </div>
             </div>
 
@@ -53,7 +52,7 @@
             </div>
 
         </div>
-    </form>
+
 </div>
 </div>
 
@@ -72,7 +71,6 @@
 <script>
 
     const actionForm = document.querySelector("#actionForm")
-    const form = document.querySelector(".deleteForm")
 
     document.querySelector(".btnList").addEventListener("click", () => {
         actionForm.submit()
@@ -88,12 +86,5 @@
 
     }, false)
 
-    document.querySelector(".btnDel").addEventListener("click", (e) => {
-
-        form.setAttribute("action", "/board/remove")
-        form.innerHTML += `<input type='hidden' name='bno' value='\${bno}'>`
-        form.submit()
-
-    }, false)
 
 </script>
